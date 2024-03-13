@@ -28,7 +28,10 @@
 8. **Admin can feature products on the front page as ads**
    - As an admin, I want to showcase specific products on the front page as featured ads to attract attention.
     
+9. **User receives a form to fill out shipping information upon checkout**
+   - As a user, I want to specify where i want my purchases to be shipped.
+     
 9. **User receives a receipt via email upon checkout**
-   - As a user, I want to receive a detailed receipt of my purchase via email when I check out my shopping cart.
+   - As a user, I want to receive a detailed receipt of my purchase, and the shipping location via email when I check out my shopping cart.
 
 
