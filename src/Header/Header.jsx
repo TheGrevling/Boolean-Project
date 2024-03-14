@@ -1,11 +1,12 @@
 import React from 'react'
 import LogoSVG from '../assets/LogoSVG'
+import './Header.css'
 
 function Header() {
   return (
-    <div>
+    <header>
       <LogoSVG></LogoSVG>
-    </div>
+    </header>
   )
 }
 
