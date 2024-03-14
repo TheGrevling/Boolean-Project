@@ -1,4 +1,4 @@
 aside{
-    background-color: #8D99AE;
+    background-color: var(--light-blue);
     width: 10%;
 }

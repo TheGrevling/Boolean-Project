@@ -1,0 +1,4 @@
+.dashboard-container{
+    background-color: var(--off-white);
+    width: 100%; /* Set width to 100% to match the width of the parent container */
+}

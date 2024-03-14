@@ -2,3 +2,12 @@ body{
     margin: 0;
     padding: 0;
   }
+
+  :root {
+    --dark-blue: #252735;
+    --light-blue: #8d99ae;
+    --off-white: #edf2f4;
+    --white: #ffffff;
+    --light-red: #ce2d41;
+    --dark-red: #760909;
+  }

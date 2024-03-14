@@ -5,10 +5,11 @@ import AdminView from './pages/AdminView/AdminView'
 import Cart from './pages/Cart/Cart'
 import CreateProfileForm from './pages/CreateProfileForm/CreateProfileForm'
 import CreateOrder from './pages/CreateOrder/CreateOrder'
+import './Dashboard.css'
 
 function Dashboard() {
   return (
-    <div>
+    <div className='dashboard-container'>
       <Routes>
       <Route path='/' element={<Products />} />
       <Route path='/admin' element={<AdminView />} />
