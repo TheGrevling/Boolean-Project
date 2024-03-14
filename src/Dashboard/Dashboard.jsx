@@ -1,5 +1,5 @@
 import React from 'react'
-import {Route, Routes} from 'react-router-dom'
+import {Route, Routes, Navigate} from 'react-router-dom'
 import Products from './pages/Products/Products'
 import AdminView from './pages/AdminView/AdminView'
 import Cart from './pages/Cart/Cart'
@@ -15,6 +15,8 @@ function Dashboard() {
       <Route path='/cart' element={<Cart />} />
       <Route path='/createprofile' element={<CreateProfileForm />} />
       <Route path='/createorder' element={<CreateOrder />} />
+      {/* Wildcard route to handle faulty URLs */}
+      <Route path='*' element={<Navigate to="/" />} />
       </Routes>
     </div>
   )
