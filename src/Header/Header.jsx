@@ -5,7 +5,7 @@ import './Header.css'
 function Header() {
   return (
     <header>
-      <LogoSVG></LogoSVG>
+      <LogoSVG primaryColor="var(--dark-red)" secondaryColor="var(--off-white)"></LogoSVG>
     </header>
   )
 }
