@@ -2,7 +2,7 @@ import React from 'react'
 
 function LogoSVG() {
   return (
-    <svg width="455.20001220703125" height="148.07090723309992" viewBox="0 0 461.13043478260875 150" class="looka-1j8o68f">
+    <svg width="455.20001220703125" height="148.07090723309992" viewBox="0 0 461.13043478260875 150" className="looka-1j8o68f">
     <defs id="SvgjsDefs11785"/>
     <g id="SvgjsG11786" featurekey="symbolGroupContainer" transform="matrix(1.4071296774690847,0,0,1.4071296774690847,-0.07817627237361899,0)" fill="#ce2d41">
       <g xmlns="http://www.w3.org/2000/svg">
