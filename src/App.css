@@ -11,3 +11,7 @@
     width: 100%; /* Set width to 100% to match the width of the parent container */
     /* Make this container stretch to fill the remaining vertical space */
 }
+
+.logo {
+    height: 52px;
+}

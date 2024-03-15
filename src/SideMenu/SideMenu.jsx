@@ -4,7 +4,9 @@ import './SideMenu.css'
 function SideMenu() {
   return (
     <aside>
-      SideMenu
+      <div>
+        Category
+      </div>
     </aside>
   )
 }
