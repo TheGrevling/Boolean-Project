@@ -1,8 +1,13 @@
 import React from 'react'
+import ProductListItem from './ProductListItem'
 
 function ProductList() {
   return (
-    <div>ProductList</div>
+    <div>
+      ProductList
+      <ProductListItem />
+    </div>
+
   )
 }
 

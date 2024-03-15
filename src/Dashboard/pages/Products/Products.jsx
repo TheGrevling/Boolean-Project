@@ -1,8 +1,12 @@
 import React from 'react'
+import ProductList from './Components/ProductList'
 
 function Products() {
   return (
-    <div>Products</div>
+    <div>
+      Products
+      <ProductList/>
+    </div>
   )
 }
 

@@ -10,7 +10,7 @@ function App() {
       <Header />
       <SiteBar />
       <div className="sub-header-container">
-        <SideMenu />
+        {/*<SideMenu />*/}
         <Dashboard />
   </div>
     </div>

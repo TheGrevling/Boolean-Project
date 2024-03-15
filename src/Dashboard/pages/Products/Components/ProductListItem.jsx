@@ -1,8 +1,11 @@
 import React from 'react'
+import  './ProductListItem.css'
 
 function ProductListItem() {
   return (
-    <div>ProductListItem</div>
+    <div className='product-container'>
+      ProductListItem
+    </div>
   )
 }
 
