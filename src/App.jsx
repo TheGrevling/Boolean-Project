@@ -12,7 +12,7 @@ function App() {
       <div className="sub-header-container">
         {/*<SideMenu />*/}
         <Dashboard />
-  </div>
+      </div>
     </div>
   )
 }

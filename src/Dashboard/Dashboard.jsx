@@ -6,12 +6,15 @@ import Cart from './pages/Cart/Cart'
 import CreateProfileForm from './pages/CreateProfileForm/CreateProfileForm'
 import CreateOrder from './pages/CreateOrder/CreateOrder'
 import './Dashboard.css'
+import ProductView from './pages/ProductView/ProductView'
 
 function Dashboard() {
   return (
     <div className='dashboard-container'>
       <Routes>
-      <Route path='/' element={<Products />} />
+      <Route path='/' element={<Navigate to="/brettspill" />}/>
+      <Route path='/:category' element={<Products />} />
+      <Route path='/products/:id' element={<ProductView />} />
       <Route path='/admin' element={<AdminView />} />
       <Route path='/cart' element={<Cart />} />
       <Route path='/createprofile' element={<CreateProfileForm />} />

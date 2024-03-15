@@ -1,0 +1,5 @@
+.list-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Initially, 5 items per row */
+    grid-gap: 10px;
+}

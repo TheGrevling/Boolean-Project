@@ -1,13 +1,22 @@
 import React from 'react'
 import './SiteBar.css'
+import { Link } from 'react-router-dom'
 
 function SiteBar() {
   return (
     <div className='site-bar'>
-        <button className='site-bar button'>Brettspill</button>
-        <button className='site-bar button'>Puslespill</button>
-        <button className='site-bar button'>Rollespill</button>
-        <button className='site-bar button'>Kortspill</button>
+        <Link to={'/board_games'} className='site-link'>
+          <button className='site-bar button'>BOARD GAMES</button>
+        </Link>
+        <Link to={'/card-games'} className='site-link'>
+          <button className='site-bar button'>CARD GAMES</button>
+        </Link>
+        <Link to={'/roleplay-games'} className='site-link'>
+          <button className='site-bar button'>ROLEPLAY GAMES</button>
+        </Link>
+        <Link to={'/puzzle-games'} className='site-link'>
+          <button className='site-bar button'>PUZZLE GAMES</button>
+        </Link>
     </div>
   )
 }
