@@ -7,18 +7,19 @@
 }
 
 .product-info-container {
+    display: flex;
+    flex-direction: column;
     box-sizing: border-box;
     min-height: 100%;
     color: var(--dark-blue);
     width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 20px;
+    padding: 20px;
     background-color: var(--white);
     border-radius: 10px;
     margin-left: 5px;
     margin-right: 5px;
 
+    gap: 10px;
     text-wrap: wrap;
 }
 
@@ -45,30 +46,82 @@
 }
 
 .number-input {
-    display: flex;
-    align-items: center;
-  }
-  
-  input[type="number"] {
-    width: 50px;
-    height: 100%;
-    text-align: center;
-  }
-  
-  .arrows {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  button {
-    padding: 4px;
-    cursor: pointer;
-    height: 100%;
-  }
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 30px;
+}
+
+input[type="number"] {
+  box-sizing: border-box;
+  width: 50px;
+  text-align: center;
+  height: 100%;
+  padding: 0;
+  border-radius: 5px;
+  border: 2px solid var(--light-red);
+}
+
+input[type='number']::-webkit-inner-spin-button, 
+input[type='number']::-webkit-outer-spin-button { 
+  opacity: 1;
+}
+
+.arrows {
+  display: flex;
+  flex-direction: column;
+}
+
+.number-input button {
+  padding: 4px;
+  cursor: pointer;
+  background-color: var(--light-red);
+  color: var(--white);
+  border: 0;
+  height: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 5px;
+}
+.number-input button:hover {
+    background-color: var(--dark-red);
+}
 
 
 .product-cost {
     font-size: larger;
     font-weight: bold;
     color: var(--light-red);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.wishlist-button {
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    height: 100%;
+    background-color: var(--light-red);
+}
+.wishlist-button:hover {
+    background-color: var(--dark-red);
+}
+
+.wishlist-button svg{
+    height: 20px;
+    width: 20px;
+}
+.wishlist-button svg path{
+    height: 20px;
+    width: 20px;
+    fill: var(--white);
+}
+
+.product-info-title {
+    margin: 0;
 }

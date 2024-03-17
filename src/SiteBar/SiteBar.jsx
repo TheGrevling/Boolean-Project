@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 function SiteBar() {
   return (
     <div className='site-bar'>
-        <Link to={'/board_games'} className='site-link'>
+        <Link to={'/board-games'} className='site-link'>
           <button className='site-bar button'>BOARD GAMES</button>
         </Link>
         <Link to={'/card-games'} className='site-link'>

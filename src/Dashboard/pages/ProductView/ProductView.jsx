@@ -1,5 +1,7 @@
 import React from 'react'
 import './ProductView.css'
+import { Link } from 'react-router-dom'
+import HeartIconSVG from '../../../assets/HeartIconSVG'
 
 function ProductView() {
   return (
@@ -14,12 +16,15 @@ function ProductView() {
           <div className='product-cost'>199 kr</div>
   
           <div className="number-input">
-            <input type="number" id="quantity" value="1"/>
+            <input type="number" id="quantity" value="1"  min="1"/>
             {/*<div className="arrows">
               <button id="increase">▲</button>
               <button id="decrease">▼</button>
             </div>*/}
             <button>ADD TO BASKET</button>
+            <Link className='wishlist-button' to='/user/wish-list'>
+              <HeartIconSVG/>
+            </Link>
           </div>
           <hr className='separator'/>
           <div>

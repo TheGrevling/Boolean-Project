@@ -1,7 +1,7 @@
 body{
     margin: 0;
     padding: 0;
-    
+    background-color: var(--dark-blue);
   }
 
   :root {
@@ -11,5 +11,5 @@ body{
     --off-white: #edf2f4;
     --white: #ffffff;
     --light-red: #ce2d41;
-    --dark-red: #760909;
+    --dark-red: #8d3131;
   }

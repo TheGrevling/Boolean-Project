@@ -1,6 +1,7 @@
 import React from 'react'
 import  './ProductListItem.css'
 import { Link } from 'react-router-dom'
+import BasketIconSVG from '../../../../assets/BasketIconSVG'
 
 function ProductListItem({id}) {
   const url = `/products/${id}`
@@ -17,10 +18,11 @@ function ProductListItem({id}) {
           </Link>
           <div className='product-container-price'>199 kr</div>
         </div>
-      </div>
       <button className='product-button-add-item'>
+        <BasketIconSVG />
         ADD TO BASKET
       </button>
+      </div>
     </div>
   )
 }
