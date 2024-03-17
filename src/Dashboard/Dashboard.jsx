@@ -14,7 +14,7 @@ function Dashboard() {
       <Routes>
       <Route path='/' element={<Navigate to="/brettspill" />}/>
       <Route path='/:category' element={<Products />} />
-      <Route path='/search-results/:query' element={<Products/>} />
+      <Route path='/search-result/:query' element={<Products/>} />
       <Route path='/products/:id' element={<ProductView />} />
       <Route path='/admin' element={<AdminView />} />
       <Route path='/basket' element={<Cart />} />
