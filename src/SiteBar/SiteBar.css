@@ -22,6 +22,7 @@
     padding-bottom: 5px;
     font-size: medium;
     box-shadow: none;
+    transition: background-color 0.25s ease;
 }
 .site-bar button:hover {
     height: 100%;
