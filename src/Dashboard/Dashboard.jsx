@@ -16,9 +16,11 @@ function Dashboard() {
       <Route path='/:category' element={<Products />} />
       <Route path='/products/:id' element={<ProductView />} />
       <Route path='/admin' element={<AdminView />} />
-      <Route path='/cart' element={<Cart />} />
-      <Route path='/createprofile' element={<CreateProfileForm />} />
-      <Route path='/createorder' element={<CreateOrder />} />
+      <Route path='/basket' element={<Cart />} />
+      <Route path='/user/wish-list' element={<Products />} /> {/* 'element=Products' Should be changed */}
+      <Route path='/user/profile' element={<Products />} /> {/* 'element=Products' Should be changed */}
+      <Route path='/create-profile' element={<CreateProfileForm />} />
+      <Route path='/basket/checkout' element={<CreateOrder />} />
       {/* Wildcard route to handle faulty URLs */}
       <Route path='*' element={<Navigate to="/" />} />
       </Routes>

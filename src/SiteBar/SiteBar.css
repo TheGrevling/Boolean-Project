@@ -11,7 +11,8 @@
     z-index: 998;
     color: var(--white);
 
-    height: 35px;
+    height: 32px;
+    min-height: 32px;
   }
 
 .site-bar button {
@@ -37,5 +38,7 @@
 }
 
 .site-link {
+    box-sizing: border-box;
+    height: 100%;
     text-decoration: none;
 }

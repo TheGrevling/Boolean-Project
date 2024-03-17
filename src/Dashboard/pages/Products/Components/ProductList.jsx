@@ -5,13 +5,14 @@ import './ProductList.css'
 function ProductList() {
   return (
       <div className='list-container'>
-        <ProductListItem />
-        <ProductListItem />
-        <ProductListItem />
-        <ProductListItem />
-        <ProductListItem />
-        <ProductListItem />
-        <ProductListItem />
+        {/*THESE ARE FOR TESTING, REPLACE WITH VALID DATA*/}
+        <ProductListItem id={1}/>
+        <ProductListItem id={1} />
+        <ProductListItem id={1} />
+        <ProductListItem id={1} />
+        <ProductListItem id={1} />
+        <ProductListItem id={1} />
+        <ProductListItem id={1} />
       </div>
   )
 }

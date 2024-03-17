@@ -2,8 +2,8 @@ import React from 'react'
 import  './ProductListItem.css'
 import { Link } from 'react-router-dom'
 
-function ProductListItem() {
-  const url = '/'
+function ProductListItem({id}) {
+  const url = `/products/${id}`
 
   return (
     <div className='product'>
@@ -19,7 +19,7 @@ function ProductListItem() {
         </div>
       </div>
       <button className='product-button-add-item'>
-        LEGG I KURV
+        ADD TO BASKET
       </button>
     </div>
   )
