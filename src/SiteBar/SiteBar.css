@@ -1,5 +1,6 @@
 .site-bar {
     background-color: var(--dark-red);
+    box-sizing: border-box;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -13,6 +14,7 @@
 
     height: 32px;
     min-height: 32px;
+    width: 100%;
   }
 
 .site-bar button {

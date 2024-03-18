@@ -1,0 +1,102 @@
+.item-container {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+}
+
+.item-info-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.item-info h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: medium;
+}
+
+.item-info div {
+    font-size: small;
+}
+
+.item-container img {
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: contain;
+}
+
+.vertical-line {
+    border-right: 1px solid grey;
+    margin: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 100%;
+}
+
+.item-button-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 3px;
+}
+
+.item-button-basket {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 5px;
+    background-color: var(--light-red);
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-decoration: none;
+    color: var(--white);
+    transition: background-color 0.3s ease;
+    transition: color 0.3s ease;
+}
+
+.item-button-basket:hover {
+    background-color: var(--dark-red);
+}
+
+.item-button-favourite {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    height: 100%;
+    border-radius: 5px;
+    background-color: var(--off-white);
+    gap: 6px;   
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-decoration: none;
+    color: var(--dark-blue);
+    transition: background-color 0.3s ease;
+    transition: color 0.3s ease;
+}
+
+.item-button-favourite svg path{
+    transform: stroke 0.3s ease;
+}
+.item-button-favourite:hover {
+    background-color: var(--dark-blue);
+    color: var(--white);
+}
+.item-button-favourite:hover svg path{
+    stroke: var(--white);
+}
+
+.item-button-favourite svg{
+    height: 20px;
+}

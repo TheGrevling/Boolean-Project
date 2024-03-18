@@ -22,7 +22,7 @@ function ProductView() {
               <button id="decrease">▼</button>
             </div>*/}
             <button>ADD TO BASKET</button>
-            <Link className='wishlist-button' to='/user/wish-list'>
+            <Link className='wishlist-button' to='/user/wishlist'>
               <HeartIconSVG/>
             </Link>
           </div>

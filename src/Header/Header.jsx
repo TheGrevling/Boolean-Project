@@ -22,7 +22,7 @@ function Header() {
       </div>
 
       <div className="header-button-list">
-        <Link to='/user/wish-list' className='header-button'>
+        <Link to='/user/wishlist' className='header-button'>
          <HeartIconSVG/>
         </Link>
         <Link to='/user/profile' className='header-button'>  {/*TODO: Add conditional rendering. If user is not logged in, show "Sign in" and route to '/sign-in'. If user  is logged in, show '{username}' and route to /user/profile*/}
