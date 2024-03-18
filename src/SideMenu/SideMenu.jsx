@@ -4,7 +4,18 @@ import './SideMenu.css'
 function SideMenu() {
   return (
     <aside>
-      SideMenu
+      <div className='container'>
+        <h2>
+          Category
+        </h2>
+      </div>
+        
+      <div className='filter-container'>
+        <div>This is a test.</div>
+        <div>This is a test.</div>
+        <div>This is a test.</div>
+        <div>This is a test.</div>
+      </div>
     </aside>
   )
 }

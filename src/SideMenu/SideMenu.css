@@ -1,4 +1,16 @@
 aside{
-    background-color: var(--light-blue);
-    width: 10%;
+    background-color: var(--white);
+    width: 250px;
+    border-right: 1px solid var(--off-white);
+}
+.container {
+    display: flex;
+    padding-left: 10px;
+}
+
+.filter-container {
+    flex-direction: column;
+    padding: 10px;
+    border-top: 1px solid var(--off-white);
+    border-bottom: 1px solid var(--off-white);
 }
