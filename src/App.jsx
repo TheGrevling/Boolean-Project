@@ -9,12 +9,17 @@ import { useEffect, useState, createContext } from 'react'
 export const DataContext = createContext();
 
 function App() {
-
+  const [userData, setUserData] = useState({
+    id: "",
+    email: "",
+    username: "",
+    role: "",
+    accessToken: ""
+  });
 
   return (
-    
     <div className="app-container">
-      <DataContext.Provider value={{}}>
+      <DataContext.Provider value={{userData: userData, setUserData: setUserData}}>
         <div className="sub-header-container">
            <Header />
            <SiteBar />

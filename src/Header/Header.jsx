@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import LogoSVG from '../assets/LogoSVG'
 import SearchIconSVG from '../assets/SearchIconSVG'
 import BasketIconSVG from '../assets/BasketIconSVG'
@@ -6,8 +6,11 @@ import './Header.css'
 import HeartIconSVG from '../assets/HeartIconSVG'
 import ProfileIconSVG from '../assets/ProfileIconSVG'
 import { Link } from 'react-router-dom'
+import { DataContext } from '../App'
 
 function Header() {
+  const dataContext = useContext(DataContext)
+
   return (
     <header>
       <Link to='/'>
@@ -25,10 +28,18 @@ function Header() {
         <Link to='/user/wishlist' className='header-button'>
          <HeartIconSVG/>
         </Link>
-        <Link to='/sign-in' className='header-button'>  {/*TODO: Add conditional rendering. If user is not logged in, show "Sign in" and route to '/sign-in'. If user  is logged in, show '{username}' and route to /user/profile*/}
-          <ProfileIconSVG/>
-          Sign In
-        </Link>
+        {/* If user is not logged in*/ }
+        {dataContext?.userData?.id !== "" ? (
+          <Link to='/sign-in' className='header-button'>
+            <ProfileIconSVG/>
+            Sign In
+          </Link>
+        ) : ( 
+          <Link to='/user/profile' className='header-button'>
+            <ProfileIconSVG/>
+            {dataContext.userData.username}
+          </Link>
+        )}
         <Link to='/basket' className='header-button'>
           <BasketIconSVG width={'23px'} height={'23px'} />
           <div className="notification-circle">5</div> {/*TODO: Add conditional rendering & Change number to value */}

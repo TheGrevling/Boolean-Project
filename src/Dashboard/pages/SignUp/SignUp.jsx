@@ -1,14 +1,17 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import '../SignIn/SignIn.css'
 import { Link } from 'react-router-dom';
+import { PostData, environment } from '../../../Services/FetchService';
+import { DataContext } from '../../../App';
+
 
 function SignUp() {
+  const dataContext = useContext(DataContext)
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    username: '',
     email: '',
-    password: ''
+    username: '',
+    password: '',
+    role: 'User'
   });
 
   // Event handler to update form data when input fields change
@@ -25,6 +28,7 @@ function SignUp() {
     e.preventDefault();
     // Perform form submission logic here, such as sending data to an API
     console.log('Form submitted:', formData);
+    PostData(environment + '/register', formData, dataContext.setUserData)
   };
 
   return (
@@ -40,28 +44,6 @@ function SignUp() {
                 id="username"
                 name="username"
                 value={formData.username}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div className='form-field'>
-              <label htmlFor="username">First name:</label>
-              <input
-                type="text"
-                id="username"
-                name="username"
-                value={formData.firstName}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div className='form-field'>
-              <label htmlFor="username">Last name:</label>
-              <input
-                type="text"
-                id="username"
-                name="username"
-                value={formData.lastName}
                 onChange={handleChange}
                 required
               />
