@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
-import './SignIn.css'
+import '../SignIn/SignIn.css'
 import { Link } from 'react-router-dom';
 
-function SignIn() {
+function SignUp() {
   const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
     username: '',
     email: '',
     password: ''
@@ -29,7 +31,7 @@ function SignIn() {
     <div className='page'>
       <div className='signin-view'>
         <div className='signin-container'>
-          <div>Sign In</div>
+          <div>Sign Up</div>
           <form onSubmit={handleSubmit}>
             <div className='form-field'>
               <label htmlFor="username">Username:</label>
@@ -41,7 +43,39 @@ function SignIn() {
                 onChange={handleChange}
                 required
               />
-
+            </div>
+            <div className='form-field'>
+              <label htmlFor="username">First name:</label>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                value={formData.firstName}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className='form-field'>
+              <label htmlFor="username">Last name:</label>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                value={formData.lastName}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className='form-field'>
+              <label htmlFor="email">Email:</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
             </div>
             <div className='form-field'>
               <label htmlFor="password">Password:</label>
@@ -57,8 +91,8 @@ function SignIn() {
             <button type="submit">Submit</button>
           </form>
 
-          <Link to="/sign-up">
-            Create a new account
+          <Link to="/sign-in">
+            Login to existing account
           </Link>
         </div>
       </div>
@@ -66,4 +100,4 @@ function SignIn() {
   )
 }
 
-export default SignIn
+export default SignUp

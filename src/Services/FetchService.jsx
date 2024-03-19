@@ -1,8 +1,9 @@
 import React from 'react'
 
-export const environment = "https://localhost:7259"
+export const environment = "https://localhost:7259" // The API url we are fetching from
+const token = ''; // TODO: TESTING purposes only. Should be replaced with a function that fetches the token stored on the client side.
 
-export const fetchData = async (url, setState) => {
+export const FetchData = async (url, setState) => {
     try {
         const response = await fetch(url)
         const data = await response.json()
@@ -12,12 +13,13 @@ export const fetchData = async (url, setState) => {
     }
 }
 
-export const postData = async (url, bodyData, setState) => {
+export const PostData = async (url, bodyData, setState) => {
     try {
         const response = await fetch(url, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify(bodyData)
         });
@@ -28,10 +30,13 @@ export const postData = async (url, bodyData, setState) => {
     }
 }
 
-export const deleteData = async (url, setState) => {
+export const DeleteData = async (url, setState) => {
     try {
         const response = await fetch(url, {
-            method: 'DELETE'
+            method: 'DELETE',
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
         });
         const data = await response.json();
         setState(data);
@@ -40,12 +45,13 @@ export const deleteData = async (url, setState) => {
     }
 }
 
-export const updateData = async (url, payload, setState) => {
+export const UpdateData = async (url, payload, setState) => {
     try {
         const response = await fetch(url, {
             method: 'PUT',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify(payload)
         });
@@ -55,12 +61,13 @@ export const updateData = async (url, payload, setState) => {
         console.error('Error updating data:', error);
     }
 }
-export const updateDataAtParam = async (url, payload, setState, parameter) => {
+export const UpdateDataAtParam = async (url, payload, setState, parameter) => {
     try {
         const response = await fetch(url + `/${parameter}`, {
             method: 'PUT',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify(payload)
         });

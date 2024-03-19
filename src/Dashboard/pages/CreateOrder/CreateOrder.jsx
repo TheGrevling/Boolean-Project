@@ -2,7 +2,9 @@ import React from 'react'
 
 function CreateOrder() {
   return (
-    <div>CreateOrder</div>
+    <div>
+      CreateOrder
+    </div>
   )
 }
 

@@ -13,6 +13,7 @@ header {
     z-index: 999;
     color: var(--light-blue); 
     width: 100%;
+    gap: 10px;
   }
 
 .search-input {

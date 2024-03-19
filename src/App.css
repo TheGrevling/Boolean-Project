@@ -15,3 +15,19 @@
 .logo {
     height: 52px;
 }
+
+input[type="number"] {
+  box-sizing: border-box;
+  width: 60px;
+  min-height: 35px;
+  text-align: center;
+  height: 100%;
+  padding: 0;
+  border-radius: 5px;
+  border: 2px solid var(--light-red);
+}
+
+input[type='number']::-webkit-inner-spin-button, 
+input[type='number']::-webkit-outer-spin-button { 
+  opacity: 1;
+}

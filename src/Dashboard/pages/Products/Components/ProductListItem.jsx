@@ -2,21 +2,25 @@ import React from 'react'
 import  './ProductListItem.css'
 import { Link } from 'react-router-dom'
 import BasketIconSVG from '../../../../assets/BasketIconSVG'
+import PropTypes from "prop-types"
 
-function ProductListItem({id}) {
-  const url = `/products/${id}`
+function ProductListItem({data}) {
+  const urlLink = `/products/${data?.id}`
 
   return (
     <div className='product'>
       <div className='product-container'>
         <div className='product-container-padding'>
-          <Link to={url}>
-            <img className='image-container' src='https://gamezone.no/Media/Cache/Images/4/8/WEB_Image_Catan_5-6_spillere_Ekspansjon_Norsk__catan-grunnspillet-5-61567907112.jpeg'/>
+          <Link to={urlLink}>
+            <img 
+              className='image-container' 
+              src={data.imageURL}
+            />
           </Link>
-          <Link to={url} className='product-container-title'>
-            Catan Grunnspill
+          <Link to={urlLink} className='product-container-title'>
+            {data?.name}
           </Link>
-          <div className='product-container-price'>199 kr</div>
+          <div className='product-container-price'>{data?.price} kr</div>
         </div>
       <button className='product-button-add-item'>
         <BasketIconSVG />
@@ -26,5 +30,10 @@ function ProductListItem({id}) {
     </div>
   )
 }
+
+ProductListItem.propTypes = { 
+	data: PropTypes.object.isRequired
+}
+
 
 export default ProductListItem
