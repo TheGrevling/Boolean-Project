@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
 import './SignIn.css'
-import { Link , useNavigate} from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { PostData, environment } from '../../../Services/FetchService';
 import { DataContext } from '../../../App';
 
@@ -12,6 +12,7 @@ function SignIn() {
     email: '',
     password: ''
   });
+  const [error, setError] = useState(null); // State to hold error
 
   // Event handler to update form data when input fields change
   const handleChange = (e) => {
@@ -22,15 +23,15 @@ function SignIn() {
     }));
   };
 
-  // Event handler to handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Perform form submission logic here, such as sending data to an API
-
     console.log('Form submitted:', formData);
-    await PostData(environment+"/login", formData, dataContext.updateUserAndSetToken)
-    navigate("/")
+    const errorOccurred = await PostData(environment + '/login', formData, dataContext.updateUserAndSetToken);
+    if (!errorOccurred) {
+      navigate("/");
+    }
   };
+
 
   return (
     <div className='page'>
