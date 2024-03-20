@@ -1,5 +1,5 @@
 import React from 'react'
-import { getCookie } from '../App';
+import { getCookie } from './CookieService';
 
 export const environment = "https://localhost:7259" // The API url we are fetching from
 const token = ''; // TODO: TESTING purposes only. Should be replaced with a function that fetches the token stored on the client side.
