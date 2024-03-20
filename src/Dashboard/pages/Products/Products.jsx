@@ -25,8 +25,13 @@ function Products() {
     // Fetch products based on category
     else if ( isCategoryRoute ) 
     {
-      FetchData(environment + '/products?category=' + categoryParam, setProducts)
-      console.log("fetching category from " + categoryParam)
+      if ( categoryParam == undefined) {
+        FetchData(environment + '/products/', setProducts)
+        console.log("fetching all categories");
+      } else {
+        FetchData(environment + '/products?category=' + categoryParam, setProducts)
+        console.log("fetching category from " + categoryParam)
+      }
     }
   }, [categoryParam, searchQueryParam, location]);
 

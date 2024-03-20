@@ -14,7 +14,7 @@ function Dashboard() {
   return (
     <div className='dashboard-container'>
       <Routes>
-        <Route path='/' element={<Navigate to="/boardgame" />}/>
+        <Route path='/' element={<Products/>}/>
         <Route path='/:category' element={<Products />} />
         <Route path='/search-result/:query' element={<Products/>} />
         <Route path='/products/:id' element={<ProductView />} />
