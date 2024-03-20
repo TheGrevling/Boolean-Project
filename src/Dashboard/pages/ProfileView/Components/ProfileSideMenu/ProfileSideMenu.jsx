@@ -1,9 +1,15 @@
-import React from 'react'
+import './ProfileSideMenu.css'
+import { Link } from 'react-router-dom'
 
 function ProfileSideMenu() {
   return (
-    <div>
-        ProfileSideMenu
+    <div className='sidemenu'>
+        <Link className='sidemenu-link'>
+          ProfileSideMenu
+        </Link>
+        <Link className='sidemenu-link'>
+          ProfileSideMenu
+        </Link>
     </div>
   )
 }

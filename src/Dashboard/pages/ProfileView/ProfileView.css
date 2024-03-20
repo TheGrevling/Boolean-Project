@@ -2,7 +2,7 @@
     display: flex;
     flex: 1;
     box-sizing: border-box;
-    width: 100%;
+    width: 85%;
     height: 100%;
     padding: 40px;
 }
@@ -35,4 +35,13 @@
     padding-right: 40px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+}
+
+.page-row {
+    display: flex;
+    box-sizing: border-box;
+    flex: 1;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
 }
