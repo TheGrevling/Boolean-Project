@@ -1,8 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import './SignIn.css'
-import { Link } from 'react-router-dom';
+import { Link , useNavigate} from 'react-router-dom';
+import { PostData, environment } from '../../../Services/FetchService';
+import { DataContext } from '../../../App';
+
 
 function SignIn() {
+  const navigate = useNavigate()
+  const dataContext = useContext(DataContext)
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -18,10 +23,13 @@ function SignIn() {
   };
 
   // Event handler to handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // Perform form submission logic here, such as sending data to an API
+
     console.log('Form submitted:', formData);
+    await PostData(environment+"/login", formData, dataContext.updateUserAndSetToken)
+    navigate("/")
   };
 
   return (
