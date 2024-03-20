@@ -2,9 +2,11 @@ import React, { useState } from 'react'
 import './SignIn.css'
 import { Link } from 'react-router-dom';
 import { PostData, environment } from '../../../Services/FetchService';
+import { DataContext } from '../../../App';
+
 
 function SignIn() {
-  const [response, setResponse] = ""
+  const dataContext = useContext(DataContext)
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -24,7 +26,7 @@ function SignIn() {
     e.preventDefault();
     // Perform form submission logic here, such as sending data to an API
 
-    PostData(environment+"/login", formData, setResponse)
+    PostData(environment+"/login", formData, dataContext.updateUserAndSetToken)
     console.log('Form submitted:', formData);
   };
 

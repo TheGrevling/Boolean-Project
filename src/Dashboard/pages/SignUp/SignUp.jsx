@@ -28,7 +28,7 @@ function SignUp() {
     e.preventDefault();
     // Perform form submission logic here, such as sending data to an API
     console.log('Form submitted:', formData);
-    PostData(environment + '/register', formData, dataContext.setUserData)
+    PostData(environment + '/register', formData, dataContext.updateUserAndSetToken)
   };
 
   return (
