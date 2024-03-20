@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import './ProductView.css'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import HeartIconSVG from '../../../assets/HeartIconSVG'
 import { FetchData, environment } from '../../../Services/FetchService'
 
@@ -54,6 +54,10 @@ function ProductView() {
           <hr className='separator'/>
           <div>
             Producer: {data.producer}
+          </div>
+          <hr className='separator'/>
+          <div>
+            {data.reviewsList}
           </div>
         </div>
       </div>
