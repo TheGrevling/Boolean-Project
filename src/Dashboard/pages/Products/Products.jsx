@@ -15,7 +15,7 @@ function Products() {
 
   return (
     <div className='page'>
-      <div className='product-page'>
+      <div className='product-page'> 
         <ProductList products={products}/>
       </div>
     </div>

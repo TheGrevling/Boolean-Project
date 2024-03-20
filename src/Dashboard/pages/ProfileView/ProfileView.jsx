@@ -2,7 +2,9 @@ import React from 'react'
 
 function ProfileView() {
   return (
-    <div>ProfileView</div>
+    <div className='page'>
+      ProfileView
+    </div>
   )
 }
 

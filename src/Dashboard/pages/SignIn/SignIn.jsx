@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 function SignIn() {
   const [formData, setFormData] = useState({
-    username: '',
     email: '',
     password: ''
   });
@@ -32,12 +31,12 @@ function SignIn() {
           <div>Sign In</div>
           <form onSubmit={handleSubmit}>
             <div className='form-field'>
-              <label htmlFor="username">Username:</label>
+              <label htmlFor="email">Email:</label>
               <input
                 type="text"
-                id="username"
-                name="username"
-                value={formData.username}
+                id="email"
+                name="email"
+                value={formData.email}
                 onChange={handleChange}
                 required
               />

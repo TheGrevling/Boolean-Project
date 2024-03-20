@@ -29,7 +29,7 @@ function Header() {
          <HeartIconSVG/>
         </Link>
         {/* If user is not logged in*/ }
-        {dataContext?.userData?.id !== "" ? (
+        {dataContext.userData.id == "" ? (
           <Link to='/sign-in' className='header-button'>
             <ProfileIconSVG/>
             Sign In

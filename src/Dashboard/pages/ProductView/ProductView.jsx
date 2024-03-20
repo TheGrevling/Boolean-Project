@@ -55,7 +55,6 @@ function ProductView() {
           <div>
             Producer: {data.producer}
           </div>
-  
         </div>
       </div>
     </div>

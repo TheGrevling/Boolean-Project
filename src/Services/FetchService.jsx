@@ -3,9 +3,16 @@ import React from 'react'
 export const environment = "https://localhost:7259" // The API url we are fetching from
 const token = ''; // TODO: TESTING purposes only. Should be replaced with a function that fetches the token stored on the client side.
 
+
 export const FetchData = async (url, setState) => {
     try {
-        const response = await fetch(url)
+        const response = await fetch(url, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+        })
         const data = await response.json()
         setState(data)
     } catch (error) {

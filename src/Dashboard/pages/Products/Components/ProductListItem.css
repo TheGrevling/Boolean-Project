@@ -96,7 +96,49 @@
 
 
 .product-container-padding {
+    display: flex;
+    flex-direction: column;
     padding: 10px;
     padding-top: 20px;
     padding-bottom: 15px;
+}
+
+.product-image-align {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.product-button-wishlist {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--light-red);
+    border-color: var(--white);
+    border-style: none;
+    border-radius: 20px;
+    position: absolute;
+    z-index: 1;
+
+     svg{
+        width: 20px;
+        height: 20px;
+    }
+     path{
+        fill: var(--white);
+    }
+}
+.product-button-wishlist:hover {
+    background-color: var(--dark-red);
+    cursor: pointer;
+
+    svg {
+        width: 20px;
+        height: 20px;
+    }
+     path{
+        fill: var(--white);
+    }
 }

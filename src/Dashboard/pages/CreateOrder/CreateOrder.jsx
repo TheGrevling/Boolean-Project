@@ -10,12 +10,12 @@ function CreateOrder() {
           Purchase Complete
         </div>
         <div className='order-container'>
-         <div>
-          Thank you for your purchase!
-         </div>
-         <Link to='/' className='order-button-return'>
-          Buy more
-         </Link>
+          <div>
+            Thank you for your purchase!
+          </div>
+          <Link to='/' className='order-button-return'>
+            Buy more
+          </Link>
         </div>
       </div>
     </div>
