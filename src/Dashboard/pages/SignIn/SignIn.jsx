@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import './SignIn.css'
 import { Link } from 'react-router-dom';
+import { PostData, environment } from '../../../Services/FetchService';
 
 function SignIn() {
+  const [response, setResponse] = ""
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -21,6 +23,8 @@ function SignIn() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Perform form submission logic here, such as sending data to an API
+
+    PostData(environment+"/login", formData, setResponse)
     console.log('Form submitted:', formData);
   };
 

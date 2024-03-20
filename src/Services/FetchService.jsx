@@ -1,4 +1,5 @@
 import React from 'react'
+import { getCookie } from '../App';
 
 export const environment = "https://localhost:7259" // The API url we are fetching from
 const token = ''; // TODO: TESTING purposes only. Should be replaced with a function that fetches the token stored on the client side.
@@ -10,7 +11,7 @@ export const FetchData = async (url, setState) => {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
+                'Authorization': `Bearer ${getCookie("accessToken")}`
             },
         })
         const data = await response.json()
@@ -26,7 +27,7 @@ export const PostData = async (url, bodyData, setState) => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
+                'Authorization': `Bearer ${getCookie("accessToken")}`
             },
             body: JSON.stringify(bodyData)
         });
@@ -42,7 +43,7 @@ export const DeleteData = async (url, setState) => {
         const response = await fetch(url, {
             method: 'DELETE',
             headers: {
-                'Authorization': `Bearer ${token}`
+                'Authorization': `Bearer ${getCookie("accessToken")}`
             }
         });
         const data = await response.json();
@@ -58,7 +59,7 @@ export const UpdateData = async (url, payload, setState) => {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
+                'Authorization': `Bearer ${getCookie("accessToken")}`
             },
             body: JSON.stringify(payload)
         });
@@ -74,7 +75,7 @@ export const UpdateDataAtParam = async (url, payload, setState, parameter) => {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
+                'Authorization': `Bearer ${getCookie("accessToken")}`
             },
             body: JSON.stringify(payload)
         });
