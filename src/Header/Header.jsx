@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import LogoSVG from '../assets/LogoSVG'
 import SearchIconSVG from '../assets/SearchIconSVG'
 import BasketIconSVG from '../assets/BasketIconSVG'
@@ -10,6 +10,11 @@ import { DataContext } from '../App'
 
 function Header() {
   const dataContext = useContext(DataContext)
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleInputChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
 
   return (
     <header>
@@ -17,8 +22,8 @@ function Header() {
         <LogoSVG primaryColor="var(--light-red)" secondaryColor="var(--off-white)"></LogoSVG>
       </Link>
       <div className='search-input'>
-        <input type="text" name="q" id="searchInput" className="search-input-field" placeholder="Search a game..."/>                        
-        <Link to='/search-result/' className="search-input-button" type="submit"> {/* Update url path to include query*/}
+        <input type="text" name="q" id="searchInput" className="search-input-field" placeholder="Search a game..." onChange={handleInputChange}/>                        
+        <Link to={`/search-result/${searchQuery}`} className="search-input-button" type="submit"> {/* Update url path to include query*/}
             <SearchIconSVG width={'23px'} height={'23px'} primaryColor={'#fff'}/>
             Search
         </Link>
