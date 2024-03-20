@@ -4,7 +4,6 @@ import './ProfileView.css'
 
 function ProfileView() {
 
-
   return (
     <div className='page'>
       <div className='page-row'>
