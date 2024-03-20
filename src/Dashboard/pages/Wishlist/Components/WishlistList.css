@@ -1,3 +1,7 @@
 .wishlist-list {
     flex: 1;
 }
+
+.line {
+    border-color: var(--off-white);
+}

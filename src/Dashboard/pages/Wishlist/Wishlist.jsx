@@ -1,4 +1,3 @@
-import React from 'react'
 import './Wishlist.css'
 import WishlistList from './Components/WishlistList'
 import HeartIconSVG from '../../../assets/HeartIconSVG'

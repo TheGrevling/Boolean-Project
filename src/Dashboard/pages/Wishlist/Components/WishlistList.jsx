@@ -1,4 +1,3 @@
-import React from 'react'
 import './WishlistList.css'
 import WishlistListItem from './WishlistListItem'
 
