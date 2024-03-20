@@ -1,4 +1,3 @@
-import React from 'react'
 import './Cart.css'
 import CartList from './Components/CartList'
 import { Link } from 'react-router-dom'
@@ -13,11 +12,11 @@ function Cart() {
           </div>
         <div className='cart-container'>
           <div className='cart-list'>
-            <thread className='cart-list-info'>
+            <div className='cart-list-info'>
               <div className='cart-list-info-product'>Product</div>
               <div className='cart-list-info-price'>Price</div>
               <div className='cart-list-info-quantity'>Quantity</div>
-            </thread>
+            </div>
             <CartList />
           </div>
           <div className='cart-info'>
