@@ -1,4 +1,3 @@
-import ProfileSideMenu from './Components/ProfileSideMenu/ProfileSideMenu'
 import './ProfileView.css'
 
 
@@ -9,7 +8,6 @@ function ProfileView() {
   return (
     <div className='page'>
       <div className='page-row'>
-        <ProfileSideMenu/>
         <div className='profile-view'>
           <div className='profile-container'>
             <div className='profile-container-top-bar'>
