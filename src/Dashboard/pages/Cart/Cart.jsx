@@ -1,4 +1,3 @@
-import React from 'react'
 import './Cart.css'
 import CartList from './Components/CartList'
 import { Link } from 'react-router-dom'

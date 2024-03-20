@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import { useContext, useState } from 'react'
 import LogoSVG from '../assets/LogoSVG'
 import SearchIconSVG from '../assets/SearchIconSVG'
 import BasketIconSVG from '../assets/BasketIconSVG'
