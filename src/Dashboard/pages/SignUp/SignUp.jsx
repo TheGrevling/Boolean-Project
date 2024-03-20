@@ -24,13 +24,13 @@ function SignUp() {
     }));
   };
 
-  // Event handler to handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Perform form submission logic here, such as sending data to an API
     console.log('Form submitted:', formData);
-    await PostData(environment + '/register', formData, dataContext.updateUserAndSetToken)
-    navigate("/")
+    const errorOccurred = await PostData(environment + '/register', formData, dataContext.updateUserAndSetToken);
+    if (!errorOccurred) {
+      navigate("/");
+    }
   };
 
   return (
