@@ -43,6 +43,7 @@
 
 .separator {
     border-top: 1px solid gray;
+    width: 100%;
 }
 
 .number-input {
@@ -50,21 +51,6 @@
   align-items: center;
   gap: 5px;
   height: 30px;
-}
-
-input[type="number"] {
-  box-sizing: border-box;
-  width: 50px;
-  text-align: center;
-  height: 100%;
-  padding: 0;
-  border-radius: 5px;
-  border: 2px solid var(--light-red);
-}
-
-input[type='number']::-webkit-inner-spin-button, 
-input[type='number']::-webkit-outer-spin-button { 
-  opacity: 1;
 }
 
 .arrows {

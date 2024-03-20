@@ -1,0 +1,42 @@
+.signin-view {
+    display: flex;
+    box-sizing: border-box;
+    flex: 1;
+    padding: 50px;
+    justify-content: center;
+}
+
+.signin-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 300px;
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    gap: 10px;
+}
+
+.signin-container form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    gap: 5px;
+    border: 1px solid var(--light-blue);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.form-field {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}

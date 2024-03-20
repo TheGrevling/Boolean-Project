@@ -1,0 +1,98 @@
+.item-container {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+}
+
+.item-info-container {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+}
+
+.item-info-image {
+    width: 25%;
+    padding-right: 5px;
+}
+.item-info-image img{
+    width: 100%;
+}
+.item-container img {
+    object-fit: contain;
+}
+.item-info-name {
+    font-weight: bold;
+    width: 35%;
+    padding-right: 5px;
+}
+.item-info-price {
+    min-width: max-content;
+    width: 15%;
+    padding-right: 5px;
+}
+.item-info-quantity {
+    width: 15%;
+    padding-right: 5px;
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.item-info h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: medium;
+}
+
+.item-info div {
+    font-size: small;
+}
+
+.vertical-line {
+    border-right: 1px solid grey;
+    margin: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 100%;
+}
+
+.item-button-remove {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 5px;
+    border: 0;
+    background-color: var(--off-white);
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-decoration: none;
+    color: var(--dark-blue);
+    transition: background-color 0.3s ease;
+    transition: color 0.3s ease;
+}
+.item-button-list-remove {
+    width: 10%;
+}
+
+.item-button-remove svg path{
+    transform: stroke 0.3s ease;
+}
+.item-button-remove:hover {
+    background-color: var(--dark-blue);
+    color: var(--white);
+}
+.item-button-remove:hover svg path{
+    stroke: var(--white);
+}
+
+.item-button-remove svg{
+    height: 25px;
+}

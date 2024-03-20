@@ -2,16 +2,32 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
-    /* Make the container stretch to the full height of the viewport */
+    width: 100vw;
 }
 
 .sub-header-container {
     display: flex;
     flex: 1;
-    width: 100%; /* Set width to 100% to match the width of the parent container */
-    /* Make this container stretch to fill the remaining vertical space */
+    width: 100%;
+    flex-direction: column;
 }
 
 .logo {
     height: 52px;
+}
+
+input[type="number"] {
+  box-sizing: border-box;
+  width: 60px;
+  min-height: 35px;
+  text-align: center;
+  height: 100%;
+  padding: 0;
+  border-radius: 5px;
+  border: 2px solid var(--light-red);
+}
+
+input[type='number']::-webkit-inner-spin-button, 
+input[type='number']::-webkit-outer-spin-button { 
+  opacity: 1;
 }

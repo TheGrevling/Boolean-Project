@@ -2,23 +2,30 @@ import React from 'react'
 import  './ProductListItem.css'
 import { Link } from 'react-router-dom'
 import BasketIconSVG from '../../../../assets/BasketIconSVG'
+import PropTypes from "prop-types"
+import HeartIconSVG from '../../../../assets/HeartIconSVG'
 
-function ProductListItem({id}) {
-  const url = `/products/${id}`
+function ProductListItem({data}) {
+  const urlLink = `/products/${data?.id}`
 
   return (
     <div className='product'>
       <div className='product-container'>
         <div className='product-container-padding'>
-          <Link to={url}>
-            <img className='image-container' src='https://gamezone.no/Media/Cache/Images/4/8/WEB_Image_Catan_5-6_spillere_Ekspansjon_Norsk__catan-grunnspillet-5-61567907112.jpeg'/>
+          <div className='product-image-align'>
+            <button className='product-button-wishlist'> {/* TODO: Add functionallity*/}
+              <HeartIconSVG/>
+            </button>
+            <Link to={urlLink}>
+              <img className='image-container' src={data.imageURL}/>
+            </Link>
+          </div>
+          <Link to={urlLink} className='product-container-title'>
+            {data?.name}
           </Link>
-          <Link to={url} className='product-container-title'>
-            Catan Grunnspill
-          </Link>
-          <div className='product-container-price'>199 kr</div>
+          <div className='product-container-price'>{data?.price} kr</div>
         </div>
-      <button className='product-button-add-item'>
+      <button className='product-button-add-item'> {/* TODO: Add functionallity*/}
         <BasketIconSVG />
         ADD TO BASKET
       </button>
@@ -26,5 +33,10 @@ function ProductListItem({id}) {
     </div>
   )
 }
+
+ProductListItem.propTypes = { 
+	data: PropTypes.object.isRequired
+}
+
 
 export default ProductListItem
