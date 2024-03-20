@@ -1,11 +1,12 @@
 import React, { useContext, useState } from 'react'
 import '../SignIn/SignIn.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { PostData, environment } from '../../../Services/FetchService';
 import { DataContext } from '../../../App';
 
 
 function SignUp() {
+  const navigate = useNavigate()
   const dataContext = useContext(DataContext)
   const [formData, setFormData] = useState({
     email: '',
@@ -24,11 +25,12 @@ function SignUp() {
   };
 
   // Event handler to handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // Perform form submission logic here, such as sending data to an API
     console.log('Form submitted:', formData);
-    PostData(environment + '/register', formData, dataContext.updateUserAndSetToken)
+    await PostData(environment + '/register', formData, dataContext.updateUserAndSetToken)
+    navigate("/")
   };
 
   return (
