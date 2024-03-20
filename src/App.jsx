@@ -2,7 +2,7 @@ import './App.css'
 import Header from './Header/Header'
 import Dashboard from './Dashboard/Dashboard'
 import SiteBar from './SiteBar/SiteBar'
-import { useState, createContext } from 'react'
+import { useState, createContext, useEffect } from 'react'
 
 export const DataContext = createContext();
 
