@@ -63,7 +63,7 @@
 }
 
 .button-submit {
-    background-color: var(--dark-red);
+    background-color: var(--light-red);
     border: 0;
     padding: 5px;
     padding-left: 10px;
@@ -74,11 +74,12 @@
     transition: background-color 0.2s ease;
     transition: color 0.2s ease;
     margin-top: 15px;
+    cursor: pointer;
 }
 
 
 .button-submit:hover {
-    background-color: var(--dark-blue);
+    background-color: var(--dark-red);
     color: var(--white);
 }
 
