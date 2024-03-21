@@ -21,9 +21,14 @@
 }
 
 .profile-container-padding {
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    gap: 5px;
     padding: 20px;
     padding-left: 40px;
     padding-right: 40px;
+    
 }
 
 .profile-container-top-bar {
@@ -44,4 +49,24 @@
     flex-direction: row;
     height: 100%;
     width: 100%;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+.profile-button-sign-out {
+    background-color: var(--off-white);
+    padding: 10px;
+    border-radius: 10px;
+    width: max-content;
+    border: none;
+    color: var(--dark-blue);
+    font-weight: bold;
+    margin-top: 10px;
+}
+.profile-button-sign-out:hover {
+    background-color: var(--dark-blue);
+    color: var(--white);
+
 }

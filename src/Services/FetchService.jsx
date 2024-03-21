@@ -151,6 +151,7 @@ const getErrorMessage = async (response) => {
 const constructErrorMessage = (errorData) => {
     let errorMessage = '';
     for (const key in errorData) {
+        // eslint-disable-next-line no-prototype-builtins
         if (errorData.hasOwnProperty(key)) {
             errorMessage += `${key}: ${errorData[key][0]}\n`; // Concatenate each error message
         }

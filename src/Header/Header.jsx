@@ -47,7 +47,7 @@ function Header() {
         )}
         <Link to='/basket' className='header-button'>
           <BasketIconSVG width={'23px'} height={'23px'} />
-          <div className="notification-circle">5</div> {/*TODO: Add conditional rendering & Change number to value */}
+          <div className="notification-circle">{dataContext.cart.length}</div> {/*TODO: Add conditional rendering & Change number to value */}
         </Link>
       </div>
     </header>

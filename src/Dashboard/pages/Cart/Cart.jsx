@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import BasketIconSVG from '../../../assets/BasketIconSVG'
 
 function Cart() {
+
   return (
     <div className='page'>
       <div className='cart-view'>

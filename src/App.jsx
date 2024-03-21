@@ -13,13 +13,21 @@ function App() {
     const idFromStorage = localStorage.getItem('id');
     const emailFromStorage = localStorage.getItem('email');
     const usernameFromStorage = localStorage.getItem('username');
-
+    
     return {
       id: idFromStorage || "",
       email: emailFromStorage || "",
       username: usernameFromStorage || ""
     };
   });
+  const [cart, setCart] = useState(() => {
+    const cartItems = localStorage.getItem('cart');
+
+    if(cartItems) return cartItems;
+    else return [];
+  });
+
+  //localStorage.setItem(key, value);
 
   const updateUserAndSetToken = (userDataWithToken) => {
     const { id, email, username, accessToken } = userDataWithToken;
@@ -48,7 +56,13 @@ function App() {
 
   return (
     <div className="app-container">
-      <DataContext.Provider value={{userData: userData, setUserData: setUserData, updateUserAndSetToken: updateUserAndSetToken}}>
+      <DataContext.Provider value={{
+          userData: userData, 
+          setUserData: setUserData, 
+          cart: cart, 
+          setCart: setCart, 
+          updateUserAndSetToken: updateUserAndSetToken
+        }}>
         <div className="sub-header-container">
            <Header />
            <SiteBar />
