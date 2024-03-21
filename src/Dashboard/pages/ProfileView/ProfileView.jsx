@@ -27,7 +27,7 @@ function ProfileView() {
               <div>
                 <span className='text-bold'>Email: </span><span>{dataContext?.userData?.email}</span>
               </div>
-              <button onClick={SignOut} className='profile-button-sign-out'> {/*TODO: Add functionallity*/}
+              <button onClick={SignOut} className='profile-button-sign-out'>
                 Sign out
               </button>
             </div>
