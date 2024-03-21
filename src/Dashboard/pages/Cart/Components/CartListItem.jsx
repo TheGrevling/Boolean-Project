@@ -1,10 +1,11 @@
-import React from 'react'
 import './CartListItem.css'
-import { Link } from 'react-router-dom'
-import BasketIconSVG from '../../../../assets/BasketIconSVG'
 import TrashIconSVG from '../../../../assets/TrashIconSVG'
+import PropTypes from 'prop-types';
+import { CartItem } from '../../../../Models/CartItem';
 
-function CartListItem() {
+function CartListItem({data}) {
+  data.quantity;
+
   return (
     <div className='item-container'>
         <div className='item-info-container'>
@@ -29,5 +30,9 @@ function CartListItem() {
     </div>
   )
 }
+CartListItem.propTypes = {
+	data: PropTypes.instanceOf(CartItem).isRequired, 
+}
+
 
 export default CartListItem

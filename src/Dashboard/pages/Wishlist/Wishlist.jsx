@@ -1,11 +1,15 @@
 import './Wishlist.css'
 import WishlistList from './Components/WishlistList'
 import HeartIconSVG from '../../../assets/HeartIconSVG'
+import { DataContext } from '../../../App'
+import { useContext } from 'react'
+
 
 function Wishlist() {
+  const dataContext = useContext(DataContext)
   // TODO: If User is not logged in, say 
 
-  /*return (
+  return (
     <div className='page'>
       <div className='wishlist-view'>
         <div className='wishlist-container'>
@@ -21,7 +25,7 @@ function Wishlist() {
         </div>
       </div>
     </div>
-  )*/
+  )
 
   return (
     <div className='page'>

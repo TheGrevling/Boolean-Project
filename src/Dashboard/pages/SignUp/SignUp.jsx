@@ -1,8 +1,8 @@
-import React, { useContext, useState } from 'react'
 import '../SignIn/SignIn.css'
 import { Link, useNavigate } from 'react-router-dom';
 import { PostData, environment } from '../../../Services/FetchService';
 import { DataContext } from '../../../App';
+import { useContext, useState } from 'react';
 
 
 function SignUp() {
@@ -28,6 +28,13 @@ function SignUp() {
     e.preventDefault();
     console.log('Form submitted:', formData);
     const errorOccurred = await PostData(environment + '/register', formData, dataContext.updateUserAndSetToken);
+    setFormData({
+      email: '',
+      username: '',
+      password: '',
+      role: 'User'
+    })
+    
     if (!errorOccurred) {
       navigate("/");
     }
