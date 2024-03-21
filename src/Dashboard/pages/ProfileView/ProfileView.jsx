@@ -11,6 +11,11 @@ function ProfileView() {
   const SignOut = () => {
     deleteCookie()
     deleteStoredUser()
+    dataContext.setUserData({
+      id: "",
+      email: "",
+      username: ""
+    })
     navigate("/")
   }
 

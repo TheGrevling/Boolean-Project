@@ -43,12 +43,15 @@ function SignUp() {
   return (
     <div className='page'>
       <div className='signin-view'>
-        <div className='signin-container'>
+      <div className='signin-container-top'>
           <div>Sign Up</div>
-          <form onSubmit={handleSubmit}>
+        </div>
+        <div className='signin-container'>
+          <form onSubmit={handleSubmit} className='signin-form'>
             <div className='form-field'>
               <label htmlFor="username">Username:</label>
               <input
+                className='custom-input'
                 type="text"
                 id="username"
                 name="username"
@@ -60,6 +63,7 @@ function SignUp() {
             <div className='form-field'>
               <label htmlFor="email">Email:</label>
               <input
+                className='custom-input'
                 type="email"
                 id="email"
                 name="email"
@@ -71,6 +75,7 @@ function SignUp() {
             <div className='form-field'>
               <label htmlFor="password">Password:</label>
               <input
+                className='custom-input'
                 type="password"
                 id="password"
                 name="password"
@@ -79,7 +84,7 @@ function SignUp() {
                 required
               />
             </div>
-            <button type="submit">Submit</button>
+            <button type="submit" className='button-submit'>Submit</button>
           </form>
 
           <Link to="/sign-in">

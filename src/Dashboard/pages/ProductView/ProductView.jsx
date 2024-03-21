@@ -1,31 +1,66 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import './ProductView.css'
 import { useParams } from 'react-router-dom'
 import HeartIconSVG from '../../../assets/HeartIconSVG'
-import { FetchData, environment } from '../../../Services/FetchService'
+import { DeleteData, FetchData, PostData, environment } from '../../../Services/FetchService'
 import Reviews from './Components/Reviews'
 import NewReview from './Components/NewReview'
-
+import { DataContext } from '../../../App'
+  
   
 function ProductView() {
   let { id } = useParams()
   const [data, setData] = useState({});
+  const [quantity, setQuantity] = useState(1);
+  const dataContext = useContext(DataContext)
 
   useEffect(() => {
     FetchData(environment + `/products/${id}`, setData)
-  }, [] )
+  }, [id] )
 
-/* EXAMPLE Of data 
-{ 
-  "id": 2,
-  "name": "Mystic Magic",
-  "producer": "Mythical Games",
-  "price": 152,
-  "category": 0,
-  "description": "Description of boardgame",
-  "imageURL": "https://gamezone.no/Media/Cache/Images/4/7/WEB_Image_Catan_Grunnspill_(Norsk)_Brettspill__catan-grunnspill820591365_plid_44797.jpeg",
-  "reviewsList": null
-}*/
+  const handleQuantityOnChange = (event) => {
+    setQuantity(event.target.value)
+  }
+
+  const uselessFunc = (data) => {
+  }
+  
+  const handleFavorite = async () => {
+    if (!dataContext.userData.id) {
+      alert('Please log in to add items to the wishlist.');
+      return;
+    }
+    console.log(dataContext.wishlist);
+    console.log(data)
+    const index = dataContext.wishlist.findIndex(item => {
+      return item.productId === data.id;
+    });
+    if (index === -1) {
+      console.log("adding")
+      // Item not in wishlist, add it
+      const response = await PostData(environment + `/wishlist/${data.id}`, {}, uselessFunc);
+    } else {
+      console.log("Deleting")
+      const wishlistItemId = dataContext.wishlist.find(item => item.productId === data.id).id;
+      // Item already in wishlist, remove it
+      await DeleteData(environment + `/wishlist/${wishlistItemId}`, uselessFunc);
+    }
+    dataContext.setUpdateWishlist(true)
+  };
+
+  const handleAddCartSubmit = () => {
+    let productIndex = dataContext.cart.findIndex(obj => obj.productId === data.id)
+
+    if (productIndex === -1) {
+      // Add product to cart
+      dataContext.setCart([...dataContext.cart, { productId: data?.id, quantity: parseInt(quantity) }])
+    } else {
+      // Increase quantity of product in cart
+      let newCart = [...dataContext.cart];
+      newCart[productIndex].quantity += parseInt(quantity);
+      dataContext.setCart(newCart)
+    }
+  }
 
   return (
     <div className='page'>
@@ -39,29 +74,33 @@ function ProductView() {
           <div className='product-cost'>{data.price} kr</div>
   
           <div className="number-input">
-            <input type="number" id="quantity" value="1"  min="1"/>
+            <input type="number" id="quantity" value={quantity}  min="1" onChange={handleQuantityOnChange}/>
             {/*<div className="arrows">
               <button id="increase">▲</button>
               <button id="decrease">▼</button>
             </div>*/}
-            <button>ADD TO BASKET</button>
-            <button className='wishlist-button'>
+            <button onClick={handleAddCartSubmit}>ADD TO BASKET</button>
+            <button className='wishlist-button' onClick={handleFavorite}>
               <HeartIconSVG/>
             </button>
           </div>
+          <div>
           <hr className='separator'/>
-          <div>
-              {data.description}
-          </div>
-          <hr className='separator'/>
-          <div>
-            Producer: {data.producer}
-          </div>
-          <div>
-            <Reviews/>
-          </div>
-          <div>
-            <NewReview/>
+            <div>
+                {data.description}
+            </div>
+            <hr className='separator'/>
+            <div>
+              Producer: {data.producer}
+            </div>
+            <hr className="separator"/>
+            <div className='review-container'>
+              <Reviews/>
+            </div>
+            <p></p>
+            <div className='review-container'>
+              <NewReview/>
+            </div>
           </div>
         </div>
       </div>

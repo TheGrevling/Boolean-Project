@@ -19,9 +19,6 @@ function ProductListItem({ data }) {
     if (productIndex === -1) {
       // Add product to cart
       dataContext.setCart([...dataContext.cart, { productId: data?.id, quantity: 1 }])
-      console.log("Add product to cart: ");
-      console.log("product Index: " + productIndex)
-      console.log(dataContext.cart)
     } else {
       // Increase quantity of product in cart
       let newCart = [...dataContext.cart];
@@ -29,6 +26,10 @@ function ProductListItem({ data }) {
       dataContext.setCart(newCart)
     }
   }
+
+  const uselessFunc = (data) => {
+  }
+
   const handleFavorite = async () => {
     if (!dataContext.userData.id) {
       alert('Please log in to add items to the wishlist.');

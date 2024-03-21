@@ -111,3 +111,71 @@
 .product-info-title {
     margin: 0;
 }
+
+.review-container {
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    background-color: var(--off-white);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.review-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.review-field{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+    align-items: center;
+}
+
+.form-field {
+    display: flex;
+    flex: 1;
+}
+
+input[type="number"].review-input-num {
+    /* Your overridden styles here */
+    border: px solid var(--dark-blue);
+    border-radius: 2px;
+    width: 85%;
+    padding: 0px;
+}
+
+input[type="text"].button {
+    width: 85%;
+    border: 0;
+}
+
+.input-title {
+    width: 15%;
+}
+
+.review-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 4px;
+}
+
+h4 {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.review-button-submit {
+    width: 80%;
+}
+
+.review-button-field {
+    display: flex;
+    box-sizing: border-box;
+    
+}

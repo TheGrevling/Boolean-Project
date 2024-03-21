@@ -18,30 +18,41 @@ function NewReview(){
     }));
   };
 
+  const handleChangeReview = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: Math.min(Math.max( value, e.target.min), e.target.max)
+    }));
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
     await PostData(environment + `/reviews/{id}?productId=${id}`, formData, setFormData);
   };
   return (
-    <div>
-        <hr className="separator"/>
-          <div>Write your review</div>
-          <form onSubmit={handleSubmit}>
+    <div className="review-field">
+        <div className="review-title">Write your review</div>
+          <form onSubmit={handleSubmit} className="review-form">
             <div className='form-field'>
-              <label htmlFor="rating">Rating:</label>
+              <label htmlFor="rating" className="input-title">Rating:</label>
               <input
-                type="text"
+                className="review-input-num"
+                type="number"
                 id="rating"
                 name="rating"
+                min="1"
+                max="5"
                 value={formData.rating}
-                onChange={handleChange}
+                onChange={handleChangeReview}
                 required
               />
             </div>
             <div className='form-field'>
-              <label htmlFor="title">Title:</label>
+              <label htmlFor="title" className="input-title">Title:</label>
               <input
+                className="button"  
                 type="text"
                 id="title"
                 name="title"
@@ -51,8 +62,9 @@ function NewReview(){
               />
             </div>
             <div className='form-field'>
-              <label htmlFor="content">Body:</label>
+              <label htmlFor="content" className="input-title">Body:</label>
               <input
+                className="button"
                 type="text"
                 id="content"
                 name="content"
@@ -61,7 +73,9 @@ function NewReview(){
                 required
               />
             </div>
-            <button type="submit">Submit</button>
+            <div className="review-button-field">
+              <button className="review-button-submit" type="submit">Submit</button>
+            </div>
           </form>
     </div>
   )

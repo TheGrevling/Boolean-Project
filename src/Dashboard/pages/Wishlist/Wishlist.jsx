@@ -9,24 +9,26 @@ function Wishlist() {
   const dataContext = useContext(DataContext)
   // TODO: If User is not logged in, say 
 
-  return (
-    <div className='page'>
-      <div className='wishlist-view'>
-        <div className='wishlist-container'>
-          <div className='wishlist-container-top'>
-            <HeartIconSVG />
-            <span>
-              Wishlist
-            </span>
-          </div>
-          <div className='wishlist-container-bottom'>
-            <WishlistList wishlist={dataContext.wishlist}/>
+  if(dataContext.userData.id !== '') 
+  {
+    return (
+      <div className='page'>
+        <div className='wishlist-view'>
+          <div className='wishlist-container'>
+            <div className='wishlist-container-top'>
+              <HeartIconSVG />
+              <span>
+                Wishlist
+              </span>
+            </div>
+            <div className='wishlist-container-bottom'>
+              <WishlistList wishlist={dataContext.wishlist}/>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  )
-
+    )
+  } else
   return (
     <div className='page'>
       <div className='wishlist-view'>
