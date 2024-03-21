@@ -1,11 +1,18 @@
 import { useContext } from 'react'
 import './ProfileView.css'
 import { DataContext } from '../../../App'
-
-
+import { deleteCookie, deleteStoredUser } from '../../../Services/CookieService'
+import { useNavigate } from 'react-router-dom'
 
 function ProfileView() {
   const dataContext = useContext(DataContext)
+  const navigate = useNavigate()
+  
+  const SignOut = () => {
+    deleteCookie()
+    deleteStoredUser()
+    navigate("/")
+  }
 
   return (
     <div className='page'>
@@ -20,7 +27,7 @@ function ProfileView() {
               <div>
                 <span className='text-bold'>Email: </span><span>{dataContext?.userData?.email}</span>
               </div>
-              <button className='profile-button-sign-out'> {/*TODO: Add functionallity*/}
+              <button onClick={SignOut} className='profile-button-sign-out'>
                 Sign out
               </button>
             </div>
