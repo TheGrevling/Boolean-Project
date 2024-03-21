@@ -30,6 +30,7 @@ function App() {
 
   const [wishlist, setWishlist] = useState([]);
   const [updateWishlist, setUpdateWishlist] = useState(false)
+  const [totalCost, setTotalCost] = useState(0)
 
   //localStorage.setItem(key, value);
 
@@ -76,6 +77,8 @@ function App() {
         cart: cart,
         setCart: setCart,
         wishlist: wishlist,
+        totalCost: totalCost,
+        setTotalCost: setTotalCost,
         setUpdateWishlist: setUpdateWishlist,
         updateUserAndSetToken: updateUserAndSetToken
       }}>
