@@ -32,6 +32,7 @@ function CartList() {
       sum += product.price * dataContext.cart.find(item => item.productId === product.id).quantity
     )
     setCost(sum)
+    dataContext.setTotalCost(sum)
 
   }, [products, dataContext.cart]);
 

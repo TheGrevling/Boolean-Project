@@ -22,8 +22,8 @@
 6. **User can view purchase history**
    - As a user, I want to review my past purchases and view my purchase history.
 
-7. **Users can add and view favorite items**
-   - As a user, I want to mark certain products as favorites and easily view them later.
+7. **Users can add and view wishlist**
+   - As a user, I want to add certain products to wishlist and easily view them later.
 
 8. **Admin can feature products on the front page as ads**
    - As an admin, I want to showcase specific products on the front page as featured ads to attract attention.
