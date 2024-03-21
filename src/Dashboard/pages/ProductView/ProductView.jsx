@@ -3,6 +3,8 @@ import './ProductView.css'
 import { useParams } from 'react-router-dom'
 import HeartIconSVG from '../../../assets/HeartIconSVG'
 import { FetchData, environment } from '../../../Services/FetchService'
+import Reviews from './Components/Reviews'
+import NewReview from './Components/NewReview'
 
   
 function ProductView() {
@@ -55,9 +57,11 @@ function ProductView() {
           <div>
             Producer: {data.producer}
           </div>
-          <hr className='separator'/>
           <div>
-            {data.reviewsList}
+            <Reviews/>
+          </div>
+          <div>
+            <NewReview/>
           </div>
         </div>
       </div>
