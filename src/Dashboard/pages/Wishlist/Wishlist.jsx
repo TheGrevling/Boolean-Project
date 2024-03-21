@@ -20,7 +20,7 @@ function Wishlist() {
             </span>
           </div>
           <div className='wishlist-container-bottom'>
-            <WishlistList/>
+            <WishlistList wishlist={dataContext.wishlist}/>
           </div>
         </div>
       </div>

@@ -4,6 +4,7 @@ import Dashboard from './Dashboard/Dashboard'
 import SiteBar from './SiteBar/SiteBar'
 import { useState, createContext, useEffect } from 'react'
 import { getCookie, setCookie } from './Services/CookieService'
+import { environment, FetchData } from './Services/FetchService'
 
 export const DataContext = createContext();
 
@@ -13,7 +14,7 @@ function App() {
     const idFromStorage = localStorage.getItem('id');
     const emailFromStorage = localStorage.getItem('email');
     const usernameFromStorage = localStorage.getItem('username');
-    
+
     return {
       id: idFromStorage || "",
       email: emailFromStorage || "",
@@ -23,9 +24,12 @@ function App() {
   const [cart, setCart] = useState(() => {
     const cartItems = localStorage.getItem('cart');
 
-    if(cartItems) return cartItems;
+    if (cartItems) return cartItems;
     else return [];
   });
+
+  const [wishlist, setWishlist] = useState([]);
+  const [updateWishlist, setUpdateWishlist] = useState(false)
 
   //localStorage.setItem(key, value);
 
@@ -43,9 +47,19 @@ function App() {
       setUserData(prevUserData => ({
         ...prevUserData,
         accessToken: accessTokenFromCookie
+
       }));
+      //if the usercookie exists, get the users wishlist
+      FetchData(environment + '/wishlist/myWishlist', setWishlist)
     }
   }, []);
+
+  useEffect(() => {
+    if (updateWishlist){
+      FetchData(environment + '/wishlist/myWishlist', setWishlist); console.log(wishlist)
+      setUpdateWishlist(false)
+    }
+  }, [updateWishlist])
 
   // useEffect to update localStorage when id, email, and username change
   useEffect(() => {
@@ -57,17 +71,19 @@ function App() {
   return (
     <div className="app-container">
       <DataContext.Provider value={{
-          userData: userData, 
-          setUserData: setUserData, 
-          cart: cart, 
-          setCart: setCart, 
-          updateUserAndSetToken: updateUserAndSetToken
-        }}>
+        userData: userData,
+        setUserData: setUserData,
+        cart: cart,
+        setCart: setCart,
+        wishlist: wishlist,
+        setUpdateWishlist: setUpdateWishlist,
+        updateUserAndSetToken: updateUserAndSetToken
+      }}>
         <div className="sub-header-container">
-           <Header />
-           <SiteBar />
-           {/*<SideMenu />*/}
-           <Dashboard />
+          <Header />
+          <SiteBar />
+          {/*<SideMenu />*/}
+          <Dashboard />
         </div>
         {/*<Footer />*/}
       </DataContext.Provider>

@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import './ProductView.css'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import HeartIconSVG from '../../../assets/HeartIconSVG'
 import { FetchData, environment } from '../../../Services/FetchService'
+import Reviews from './Components/Reviews'
+import NewReview from './Components/NewReview'
 
   
 function ProductView() {
@@ -54,6 +56,12 @@ function ProductView() {
           <hr className='separator'/>
           <div>
             Producer: {data.producer}
+          </div>
+          <div>
+            <Reviews/>
+          </div>
+          <div>
+            <NewReview/>
           </div>
         </div>
       </div>
